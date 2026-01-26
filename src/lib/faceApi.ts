@@ -3,11 +3,11 @@ import * as faceapi from 'face-api.js';
 let modelsLoaded = false;
 let loadingPromise: Promise<void> | null = null;
 
-const MODEL_URL = 'https://justadudewhohacks.github.io/face-api.js/models';
+const MODEL_URL = '/models';
 
 export async function loadModels(): Promise<void> {
   if (modelsLoaded) return;
-  
+
   if (loadingPromise) {
     return loadingPromise;
   }
