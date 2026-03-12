@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { loadModels, detectFaces, FaceDetection, isModelsLoaded } from '@/lib/faceApi';
-import { supabase } from '@/integrations/supabase/client';
+import { db, addDoc, collection } from '@/integrations/firebase/client';
 
 interface UseFaceDetectionOptions {
   autoStart?: boolean;
@@ -49,7 +49,8 @@ export function useFaceDetection(options: UseFaceDetectionOptions = {}) {
     if (!saveToDatabase) return;
 
     try {
-      await supabase.from('face_analytics').insert({
+      // add a document to the Firestore collection
+      await addDoc(collection(db, 'face_analytics'), {
         emotion: detection.emotion,
         emotion_confidence: detection.emotionConfidence,
         age_group: detection.ageGroup,
@@ -57,6 +58,8 @@ export function useFaceDetection(options: UseFaceDetectionOptions = {}) {
         gender: detection.gender,
         gender_confidence: detection.genderConfidence,
         session_id: sessionIdRef.current,
+        timestamp: new Date().toISOString(),
+        created_at: new Date().toISOString(),
       });
     } catch (err) {
       console.error('Failed to save analytics:', err);

@@ -13,7 +13,7 @@ import {
 import { Switch } from '@/components/ui/switch';
 import { Slider } from '@/components/ui/slider';
 import { Camera, Download, Trash2, Settings as SettingsIcon, Info } from 'lucide-react';
-import { supabase } from '@/integrations/supabase/client';
+import { db, collection, getDocs, query, orderBy, deleteDoc, doc } from '@/integrations/firebase/client';
 import { toast } from 'sonner';
 
 interface CameraDevice {
@@ -54,14 +54,14 @@ export default function Settings() {
   const handleExportData = async () => {
     setIsExporting(true);
     try {
-      const { data, error } = await supabase
-        .from('face_analytics')
-        .select('*')
-        .order('timestamp', { ascending: false });
+      const q = query(
+        collection(db, 'face_analytics'),
+        orderBy('timestamp', 'desc')
+      );
+      const snap = await getDocs(q);
+      const documents = snap.docs.map(d => ({ id: d.id, ...d.data() }));
 
-      if (error) throw error;
-
-      const blob = new Blob([JSON.stringify(data, null, 2)], {
+      const blob = new Blob([JSON.stringify(documents, null, 2)], {
         type: 'application/json',
       });
       const url = URL.createObjectURL(blob);
@@ -89,9 +89,10 @@ export default function Settings() {
 
     setIsClearing(true);
     try {
-      const { error } = await supabase.from('face_analytics').delete().neq('id', '');
-
-      if (error) throw error;
+      const q = query(collection(db, 'face_analytics'));
+      const snap = await getDocs(q);
+      const batchDeletes = snap.docs.map(d => deleteDoc(doc(db, 'face_analytics', d.id)));
+      await Promise.all(batchDeletes);
 
       toast.success('All data cleared successfully');
     } catch (error) {

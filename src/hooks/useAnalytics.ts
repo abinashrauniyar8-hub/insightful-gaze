@@ -1,5 +1,13 @@
 import { useState, useEffect, useMemo } from 'react';
-import { supabase } from '@/integrations/supabase/client';
+import {
+  db,
+  collection,
+  query as firestoreQuery,
+  where,
+  orderBy,
+  getDocs,
+  onSnapshot,
+} from '@/integrations/firebase/client';
 import { startOfDay, startOfWeek, startOfMonth, subDays, format, startOfHour } from 'date-fns';
 
 export type TimeRange = 'today' | 'week' | 'month' | 'all';
@@ -42,20 +50,20 @@ export function useAnalytics(timeRange: TimeRange = 'today') {
       setError(null);
 
       try {
-        let query = supabase
-          .from('face_analytics')
-          .select('*')
-          .order('timestamp', { ascending: false });
+        // build Firestore query
+        let q = firestoreQuery(
+          collection(db, 'face_analytics'),
+          orderBy('timestamp', 'desc')
+        );
 
         const startDate = getStartDate(timeRange);
         if (startDate) {
-          query = query.gte('timestamp', startDate.toISOString());
+          q = firestoreQuery(q, where('timestamp', '>=', startDate.toISOString()));
         }
 
-        const { data: result, error: queryError } = await query;
-
-        if (queryError) throw queryError;
-        setData(result || []);
+        const snapshot = await getDocs(q);
+        const result = snapshot.docs.map(d => ({ id: d.id, ...d.data() } as AnalyticsData));
+        setData(result);
       } catch (err) {
         setError('Failed to fetch analytics data');
         console.error(err);
@@ -66,20 +74,27 @@ export function useAnalytics(timeRange: TimeRange = 'today') {
 
     fetchData();
 
-    // Subscribe to realtime updates
-    const channel = supabase
-      .channel('face_analytics_changes')
-      .on(
-        'postgres_changes',
-        { event: 'INSERT', schema: 'public', table: 'face_analytics' },
-        (payload) => {
-          setData(prev => [payload.new as AnalyticsData, ...prev]);
-        }
-      )
-      .subscribe();
+    // subscribe to realtime additions
+    const baseQuery = firestoreQuery(
+      collection(db, 'face_analytics'),
+      orderBy('timestamp', 'desc')
+    );
+    const startDate = getStartDate(timeRange);
+    const realtimeQuery = startDate
+      ? firestoreQuery(baseQuery, where('timestamp', '>=', startDate.toISOString()))
+      : baseQuery;
+
+    const unsubscribe = onSnapshot(realtimeQuery, (snap) => {
+      const additions = snap.docChanges()
+        .filter(c => c.type === 'added')
+        .map(c => ({ id: c.doc.id, ...c.doc.data() } as AnalyticsData));
+      if (additions.length) {
+        setData(prev => [...additions, ...prev]);
+      }
+    });
 
     return () => {
-      supabase.removeChannel(channel);
+      unsubscribe();
     };
   }, [timeRange]);
 
