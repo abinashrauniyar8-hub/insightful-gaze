@@ -1,0 +1,1014 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta charset="utf-8">
+<title>FaceInsight - Project Documentation</title>
+<!--[if gte mso 9]>
+<xml>
+<w:WordDocument>
+<w:View>Print</w:View>
+<w:Zoom>100</w:Zoom>
+<w:DoNotOptimizeForBrowser/>
+</w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+@page {
+  size: A4;
+  margin: 2.54cm 2.54cm 2.54cm 2.54cm;
+  mso-header-margin: 1.27cm;
+  mso-footer-margin: 1.27cm;
+}
+body {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 12pt;
+  line-height: 1.6;
+  color: #000000;
+}
+h1 {
+  font-size: 26pt;
+  font-weight: bold;
+  text-align: center;
+  color: #1a1a2e;
+  margin-top: 40pt;
+  margin-bottom: 6pt;
+  page-break-before: auto;
+}
+h2 {
+  font-size: 18pt;
+  font-weight: bold;
+  color: #16213e;
+  margin-top: 24pt;
+  margin-bottom: 8pt;
+  border-bottom: 2px solid #0f3460;
+  padding-bottom: 4pt;
+  page-break-after: avoid;
+}
+h3 {
+  font-size: 14pt;
+  font-weight: bold;
+  color: #0f3460;
+  margin-top: 16pt;
+  margin-bottom: 6pt;
+}
+h4 {
+  font-size: 12pt;
+  font-weight: bold;
+  color: #333;
+  margin-top: 12pt;
+  margin-bottom: 4pt;
+}
+p {
+  margin-top: 6pt;
+  margin-bottom: 6pt;
+  text-align: justify;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  font-size: 11pt;
+}
+th {
+  background-color: #0f3460;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 8pt 10pt;
+  text-align: left;
+  border: 1px solid #0f3460;
+}
+td {
+  padding: 6pt 10pt;
+  border: 1px solid #cccccc;
+  vertical-align: top;
+}
+tr:nth-child(even) td {
+  background-color: #f2f6fc;
+}
+code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10pt;
+  background-color: #f4f4f4;
+  padding: 1pt 4pt;
+  border: 1px solid #e0e0e0;
+}
+pre {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 9.5pt;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 10pt;
+  margin: 10pt 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+ul, ol {
+  margin-top: 6pt;
+  margin-bottom: 6pt;
+}
+li {
+  margin-bottom: 4pt;
+}
+.cover-page {
+  text-align: center;
+  page-break-after: always;
+  padding-top: 120pt;
+}
+.cover-page h1 {
+  font-size: 32pt;
+  color: #0f3460;
+  margin-bottom: 12pt;
+}
+.cover-page .subtitle {
+  font-size: 18pt;
+  color: #555;
+  margin-bottom: 40pt;
+}
+.cover-page .meta {
+  font-size: 14pt;
+  color: #333;
+  margin-top: 60pt;
+  line-height: 2;
+}
+.toc {
+  page-break-after: always;
+}
+.toc a {
+  text-decoration: none;
+  color: #0f3460;
+}
+.toc li {
+  margin-bottom: 6pt;
+  font-size: 12pt;
+}
+.page-break {
+  page-break-before: always;
+}
+.highlight-box {
+  background-color: #e8f4e8;
+  border-left: 4px solid #2d8a4e;
+  padding: 10pt 14pt;
+  margin: 10pt 0;
+}
+.warning-box {
+  background-color: #fff3e0;
+  border-left: 4px solid #e65100;
+  padding: 10pt 14pt;
+  margin: 10pt 0;
+}
+.architecture-box {
+  background-color: #f0f4ff;
+  border: 1px solid #b0c4de;
+  padding: 12pt;
+  margin: 10pt 0;
+  font-family: 'Courier New', monospace;
+  font-size: 9.5pt;
+  white-space: pre;
+  line-height: 1.5;
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== COVER PAGE ==================== -->
+<div class="cover-page">
+  <br/><br/><br/>
+  <h1>FaceInsight</h1>
+  <div class="subtitle">Customer Sentiment &amp; Demographic Analysis System</div>
+  <p style="font-size:14pt; color:#777;">A Privacy-Focused, Real-Time Facial Analysis Web Application</p>
+  
+  <br/><br/><br/>
+  
+  <div class="meta">
+    <p><strong>Final Year Project Documentation</strong></p>
+    <p><strong>Author:</strong> Abinash Rauniyar</p>
+    <p><strong>Version:</strong> 1.0.0</p>
+    <p><strong>Date:</strong> 2026</p>
+  </div>
+</div>
+
+<!-- ==================== TABLE OF CONTENTS ==================== -->
+<div class="toc">
+  <h2>Table of Contents</h2>
+  <ol>
+    <li><a href="#ch1">Project Overview</a></li>
+    <li><a href="#ch2">Problem Statement</a></li>
+    <li><a href="#ch3">Objectives</a></li>
+    <li><a href="#ch4">Features</a></li>
+    <li><a href="#ch5">System Architecture</a></li>
+    <li><a href="#ch6">Technology Stack</a></li>
+    <li><a href="#ch7">Machine Learning Models</a></li>
+    <li><a href="#ch8">Data Flow &amp; Privacy Architecture</a></li>
+    <li><a href="#ch9">Database Schema</a></li>
+    <li><a href="#ch10">Application Pages</a></li>
+    <li><a href="#ch11">Component Structure</a></li>
+    <li><a href="#ch12">Installation &amp; Setup</a></li>
+    <li><a href="#ch13">Configuration</a></li>
+    <li><a href="#ch14">Usage Guide</a></li>
+    <li><a href="#ch15">API &amp; Hooks Reference</a></li>
+    <li><a href="#ch16">Security &amp; Privacy</a></li>
+    <li><a href="#ch17">Testing</a></li>
+    <li><a href="#ch18">Limitations &amp; Future Work</a></li>
+    <li><a href="#ch19">References</a></li>
+  </ol>
+</div>
+
+<!-- ==================== CHAPTER 1 ==================== -->
+<div class="page-break">
+  <h2 id="ch1">1. Project Overview</h2>
+  
+  <p><strong>FaceInsight</strong> is a privacy-focused, real-time facial analysis web application designed for retail stores, cafés, and service environments. It uses browser-based machine learning to detect faces from a webcam feed and analyze customer emotions, age groups, and gender — all without transmitting or storing any facial images.</p>
+  
+  <p>The system provides a comprehensive analytics dashboard with sentiment trends, demographic breakdowns, and actionable insights to help businesses understand customer engagement and satisfaction levels.</p>
+  
+  <h3>Key Highlights</h3>
+  <ul>
+    <li><strong>100% Browser-Based ML</strong> — No server-side processing of video or images</li>
+    <li><strong>Privacy by Design</strong> — No facial images are stored or transmitted to any server</li>
+    <li><strong>Real-Time Analytics</strong> — Live dashboards with multiple interactive chart types</li>
+    <li><strong>Multi-Face Support</strong> — Simultaneously analyze multiple faces in a single frame</li>
+    <li><strong>7 Emotion Classes</strong> — Happy, Sad, Angry, Neutral, Surprised, Fearful, Disgusted</li>
+    <li><strong>Responsive Design</strong> — Works seamlessly on desktop and tablet devices</li>
+    <li><strong>Data Export &amp; Management</strong> — Export analytics as JSON, clear data on demand</li>
+  </ul>
+</div>
+
+<!-- ==================== CHAPTER 2 ==================== -->
+<div class="page-break">
+  <h2 id="ch2">2. Problem Statement</h2>
+  
+  <p>Traditional customer feedback mechanisms — such as surveys, online reviews, and physical feedback forms — suffer from inherently low response rates and significant selection bias. Customers who are extremely satisfied or dissatisfied are overrepresented, while the majority of customers provide no feedback at all. This creates a distorted view of actual customer sentiment.</p>
+  
+  <p>Businesses operating physical locations such as cafés, retail stores, and service centers lack real-time visibility into customer emotions and demographics. By the time negative trends are identified through conventional methods, the damage to customer satisfaction and revenue has already occurred.</p>
+  
+  <p>Existing facial analysis solutions on the market raise significant privacy concerns because they transmit facial data to cloud-based servers for processing. This approach conflicts with growing privacy regulations (GDPR, CCPA) and consumer expectations around data protection.</p>
+  
+  <h3>FaceInsight addresses these challenges by providing:</h3>
+  <ul>
+    <li><strong>Real-time, passive customer sentiment monitoring</strong> — No customer participation required</li>
+    <li><strong>Complete privacy preservation</strong> — All ML processing occurs client-side in the browser</li>
+    <li><strong>Actionable demographic and emotional analytics</strong> — Visualized through interactive dashboards</li>
+    <li><strong>Zero friction for customers</strong> — No forms, no surveys, no opt-in needed</li>
+    <li><strong>Regulatory compliance</strong> — Only anonymized aggregate statistics are stored</li>
+  </ul>
+</div>
+
+<!-- ==================== CHAPTER 3 ==================== -->
+<div class="page-break">
+  <h2 id="ch3">3. Objectives</h2>
+  
+  <p>The primary objectives of this project are:</p>
+  
+  <ol>
+    <li><strong>Design and implement</strong> a real-time face detection system using browser-based machine learning technologies (TensorFlow.js / face-api.js)</li>
+    <li><strong>Classify customer emotions</strong> into 7 distinct categories (Happy, Sad, Angry, Neutral, Surprised, Fearful, Disgusted) with associated confidence scores</li>
+    <li><strong>Predict demographic attributes</strong> including age group (Child, Teen, Adult, Senior) and gender from facial features</li>
+    <li><strong>Build a comprehensive analytics dashboard</strong> for visualizing sentiment trends, demographic distributions, and temporal patterns</li>
+    <li><strong>Ensure complete privacy</strong> by processing all video frames locally in the browser and storing only anonymized statistical data</li>
+    <li><strong>Create an intuitive, responsive user interface</strong> suitable for deployment in retail and hospitality environments</li>
+    <li><strong>Implement data management features</strong> including export capabilities and data clearing functionality</li>
+  </ol>
+</div>
+
+<!-- ==================== CHAPTER 4 ==================== -->
+<div class="page-break">
+  <h2 id="ch4">4. Features</h2>
+  
+  <h3>4.1 Real-Time Face Detection</h3>
+  <ul>
+    <li>Live webcam feed with face bounding box overlays</li>
+    <li>Multi-face simultaneous detection and analysis</li>
+    <li>Configurable detection interval (100ms to 2000ms)</li>
+    <li>Camera device selection support for multi-camera setups</li>
+    <li>Visual indicators for active detection status</li>
+  </ul>
+  
+  <h3>4.2 Emotion Recognition</h3>
+  <p>The system classifies facial expressions into 7 emotion categories using deep learning:</p>
+  
+  <table>
+    <tr><th>Emotion</th><th>Emoji</th><th>Sentiment Category</th></tr>
+    <tr><td>Happy</td><td>😊</td><td>Positive</td></tr>
+    <tr><td>Surprised</td><td>😲</td><td>Positive</td></tr>
+    <tr><td>Neutral</td><td>😐</td><td>Neutral</td></tr>
+    <tr><td>Sad</td><td>😢</td><td>Negative</td></tr>
+    <tr><td>Angry</td><td>😠</td><td>Negative</td></tr>
+    <tr><td>Fearful</td><td>😨</td><td>Negative</td></tr>
+    <tr><td>Disgusted</td><td>🤢</td><td>Negative</td></tr>
+  </table>
+  
+  <h3>4.3 Demographic Analysis</h3>
+  <ul>
+    <li><strong>Age Groups:</strong> Child (0–12), Teen (13–19), Adult (20–59), Senior (60+)</li>
+    <li><strong>Gender:</strong> Male, Female</li>
+    <li>Confidence percentages provided for each prediction</li>
+  </ul>
+  
+  <h3>4.4 Analytics Dashboard</h3>
+  <p>The dashboard provides the following visualizations:</p>
+  <ul>
+    <li><strong>Total Faces Analyzed</strong> — Running counter with real-time updates</li>
+    <li><strong>Sentiment Score</strong> — Composite gauge ranging from 0 to 100</li>
+    <li><strong>Emotion Distribution</strong> — Animated pie chart showing emotion proportions</li>
+    <li><strong>Sentiment Trend</strong> — Hourly line chart tracking positive, negative, and neutral sentiment</li>
+    <li><strong>Age Group Distribution</strong> — Bar chart of demographic age groups</li>
+    <li><strong>Emotion by Gender</strong> — Grouped bar chart correlating emotions with gender</li>
+    <li><strong>Peak Unhappy Times</strong> — Cards highlighting the top 3 hours with most negative sentiment</li>
+    <li><strong>Sentiment Gauge</strong> — Visual 0–100 gauge with color-coded zones</li>
+    <li><strong>Time Range Filters</strong> — Today, This Week, This Month, All Time</li>
+  </ul>
+  
+  <h3>4.5 Settings &amp; Data Management</h3>
+  <ul>
+    <li>Camera device selection dropdown</li>
+    <li>Detection interval adjustment slider</li>
+    <li>Toggle for enabling/disabling database persistence</li>
+    <li>Export all analytics data as JSON file</li>
+    <li>Clear all stored data with confirmation dialog</li>
+  </ul>
+</div>
+
+<!-- ==================== CHAPTER 5 ==================== -->
+<div class="page-break">
+  <h2 id="ch5">5. System Architecture</h2>
+  
+  <h3>5.1 High-Level Architecture Diagram</h3>
+  
+  <div class="architecture-box">┌─────────────────────────────────────────────────────────┐
+│                    Client Browser                       │
+│                                                         │
+│  ┌──────────┐    ┌───────────────┐    ┌──────────────┐  │
+│  │  Webcam   │──▶│  face-api.js  │──▶│  React UI    │  │
+│  │  Stream   │    │ (TensorFlow.js)│   │  Components  │  │
+│  └──────────┘    └───────┬───────┘    └──────┬───────┘  │
+│                          │                    │          │
+│                  ┌───────▼───────┐            │          │
+│                  │  Anonymized   │            │          │
+│                  │  Data Only    │            │          │
+│                  │  (no images)  │            │          │
+│                  └───────┬───────┘            │          │
+└──────────────────────────┼────────────────────┼──────────┘
+                           │                    │
+                   ┌───────▼────────────────────▼──────┐
+                   │         Firebase Firestore         │
+                   │     (Anonymized Statistics Only)   │
+                   │                                    │
+                   │  • emotion, confidence             │
+                   │  • age_group, age_estimate          │
+                   │  • gender, gender_confidence        │
+                   │  • timestamp, session_id            │
+                   └────────────────────────────────────┘</div>
+  
+  <h3>5.2 Data Flow</h3>
+  <ol>
+    <li><strong>Video Capture</strong> — The browser captures video frames from the user's webcam via the WebRTC API (<code>navigator.mediaDevices.getUserMedia</code>)</li>
+    <li><strong>Local ML Processing</strong> — face-api.js (built on TensorFlow.js) processes each video frame entirely within the browser's JavaScript engine using WebGL acceleration</li>
+    <li><strong>Feature Extraction</strong> — ML models extract emotion classification, age estimation, and gender prediction from detected faces</li>
+    <li><strong>Anonymization</strong> — Only statistical labels and confidence scores are retained; no facial landmarks, embeddings, or pixel data leaves the processing pipeline</li>
+    <li><strong>Storage</strong> — Anonymized records are persisted to Firebase Firestore as structured documents</li>
+    <li><strong>Visualization</strong> — The dashboard queries stored data in real-time and renders interactive charts using the Recharts library</li>
+  </ol>
+  
+  <h3>5.3 Component Architecture</h3>
+  <p>The application follows a modular React component architecture with clear separation of concerns:</p>
+  <ul>
+    <li><strong>Pages</strong> — Top-level route components (Index, Analyze, Dashboard, Settings)</li>
+    <li><strong>Layout Components</strong> — Shared UI elements (Header, Navigation)</li>
+    <li><strong>Feature Components</strong> — Domain-specific components (CameraView, FaceOverlay, Chart components)</li>
+    <li><strong>UI Primitives</strong> — Reusable design-system components (Button, Card, Select, etc.)</li>
+    <li><strong>Custom Hooks</strong> — Encapsulated business logic (useFaceDetection, useAnalytics)</li>
+    <li><strong>Library Modules</strong> — Utility functions and ML wrapper (faceApi.ts, utils.ts)</li>
+  </ul>
+</div>
+
+<!-- ==================== CHAPTER 6 ==================== -->
+<div class="page-break">
+  <h2 id="ch6">6. Technology Stack</h2>
+  
+  <table>
+    <tr><th>Layer</th><th>Technology</th><th>Version</th><th>Purpose</th></tr>
+    <tr><td>Frontend Framework</td><td>React + TypeScript</td><td>18.3</td><td>Component-based UI with type safety</td></tr>
+    <tr><td>Build Tool</td><td>Vite</td><td>5.4</td><td>Fast development server and production bundling</td></tr>
+    <tr><td>Styling</td><td>Tailwind CSS</td><td>3.4</td><td>Utility-first CSS framework</td></tr>
+    <tr><td>UI Components</td><td>shadcn/ui (Radix UI)</td><td>—</td><td>Accessible, composable component primitives</td></tr>
+    <tr><td>Charts</td><td>Recharts</td><td>2.15</td><td>React-based data visualization</td></tr>
+    <tr><td>ML Framework</td><td>face-api.js (TensorFlow.js)</td><td>0.22</td><td>Browser-based face detection &amp; analysis</td></tr>
+    <tr><td>Database</td><td>Firebase Firestore</td><td>10.x</td><td>Real-time NoSQL cloud database</td></tr>
+    <tr><td>Routing</td><td>React Router DOM</td><td>6.30</td><td>Client-side page routing</td></tr>
+    <tr><td>State Management</td><td>TanStack React Query</td><td>5.x</td><td>Async state management and caching</td></tr>
+    <tr><td>Icons</td><td>Lucide React</td><td>0.462</td><td>Consistent icon library</td></tr>
+    <tr><td>Notifications</td><td>Sonner</td><td>1.7</td><td>Toast notification system</td></tr>
+    <tr><td>Date Utilities</td><td>date-fns</td><td>3.6</td><td>Date formatting and manipulation</td></tr>
+    <tr><td>Form Handling</td><td>React Hook Form + Zod</td><td>7.x / 3.x</td><td>Form validation with schema support</td></tr>
+    <tr><td>Testing</td><td>Vitest + Testing Library</td><td>3.2</td><td>Unit and component testing</td></tr>
+  </table>
+  
+  <h3>6.1 Why These Technologies?</h3>
+  
+  <h4>React + TypeScript</h4>
+  <p>React provides a component-based architecture ideal for building complex interactive UIs. TypeScript adds compile-time type checking, reducing runtime errors and improving code maintainability — critical for a project involving ML data pipelines.</p>
+  
+  <h4>face-api.js</h4>
+  <p>face-api.js wraps TensorFlow.js with a high-level API specifically designed for face analysis tasks. It provides pre-trained models for detection, landmarks, expressions, age, and gender — eliminating the need for custom model training while delivering good accuracy.</p>
+  
+  <h4>Firebase Firestore</h4>
+  <p>Firestore provides real-time data synchronization, enabling the dashboard to update live as new detections are recorded. Its document-based schema is well-suited to storing individual detection records with flexible fields.</p>
+  
+  <h4>Vite</h4>
+  <p>Vite offers significantly faster development server startup and hot module replacement compared to alternatives like Webpack, improving developer productivity during iterative development.</p>
+</div>
+
+<!-- ==================== CHAPTER 7 ==================== -->
+<div class="page-break">
+  <h2 id="ch7">7. Machine Learning Models</h2>
+  
+  <p>FaceInsight uses <strong>face-api.js</strong>, a JavaScript API built on top of TensorFlow.js, which provides pre-trained deep learning models for face analysis tasks.</p>
+  
+  <h3>7.1 Models Used</h3>
+  
+  <table>
+    <tr><th>Model</th><th>Weight File</th><th>Purpose</th><th>Architecture</th></tr>
+    <tr><td>Tiny Face Detector</td><td>tiny_face_detector_model</td><td>Face detection &amp; localization</td><td>MobileNetV1-based SSD</td></tr>
+    <tr><td>Face Landmark 68</td><td>face_landmark_68_model</td><td>68-point facial landmark detection</td><td>CNN</td></tr>
+    <tr><td>Face Expression</td><td>face_expression_model</td><td>7-class emotion classification</td><td>CNN</td></tr>
+    <tr><td>Age &amp; Gender</td><td>age_gender_model</td><td>Age estimation &amp; gender classification</td><td>CNN</td></tr>
+    <tr><td>Face Recognition</td><td>face_recognition_model</td><td>128-dimensional face descriptor</td><td>ResNet-34</td></tr>
+  </table>
+  
+  <h3>7.2 Model Loading Strategy</h3>
+  <ul>
+    <li>Models are loaded asynchronously when the application mounts</li>
+    <li>All 5 models load in parallel using <code>Promise.all()</code> for optimal performance</li>
+    <li>A singleton loading promise prevents duplicate network requests</li>
+    <li>Models are served as static files from the <code>/public/models/</code> directory</li>
+    <li>Total model size: approximately 6MB across sharded weight files</li>
+  </ul>
+  
+  <h3>7.3 Detection Pipeline</h3>
+  <p>Each video frame passes through the following sequential pipeline:</p>
+  
+  <div class="architecture-box">Video Frame
+    │
+    ▼
+TinyFaceDetector
+    → Outputs: face bounding box coordinates
+    │
+    ▼
+FaceLandmark68Net
+    → Outputs: 68 facial landmark points (eyes, nose, mouth, jaw)
+    │
+    ▼
+FaceExpressionNet
+    → Outputs: 7-class emotion probabilities
+    │
+    ▼
+AgeGenderNet
+    → Outputs: age estimate (years), gender label + probability
+    │
+    ▼
+Structured FaceDetection Result</div>
+  
+  <h3>7.4 Emotion Classification Details</h3>
+  <p>The Face Expression model outputs a probability distribution across all 7 emotion classes. The dominant emotion is selected as the one with the highest probability score. Both the emotion label and confidence score are stored.</p>
+  
+  <h3>7.5 Age Group Mapping</h3>
+  <p>The AgeGenderNet model outputs a continuous age estimate. This is mapped to discrete age groups using the following logic:</p>
+  
+  <pre>
+function getAgeGroup(age: number): string {
+  if (age &lt;= 12) return 'Child';
+  if (age &lt;= 19) return 'Teen';
+  if (age &lt;= 59) return 'Adult';
+  return 'Senior';
+}</pre>
+</div>
+
+<!-- ==================== CHAPTER 8 ==================== -->
+<div class="page-break">
+  <h2 id="ch8">8. Data Flow &amp; Privacy Architecture</h2>
+  
+  <h3>8.1 What IS Stored (Anonymized Data)</h3>
+  
+  <table>
+    <tr><th>Field</th><th>Data Type</th><th>Example Value</th><th>Description</th></tr>
+    <tr><td>emotion</td><td>string</td><td>"happy"</td><td>Classified emotion label</td></tr>
+    <tr><td>emotion_confidence</td><td>float</td><td>0.92</td><td>Confidence score (0.0–1.0)</td></tr>
+    <tr><td>age_group</td><td>string</td><td>"Adult"</td><td>Mapped age category</td></tr>
+    <tr><td>age_estimate</td><td>integer</td><td>28</td><td>Predicted age in years</td></tr>
+    <tr><td>gender</td><td>string</td><td>"male"</td><td>Predicted gender</td></tr>
+    <tr><td>gender_confidence</td><td>float</td><td>0.95</td><td>Gender prediction confidence</td></tr>
+    <tr><td>session_id</td><td>UUID</td><td>"a1b2c3d4-..."</td><td>Random session identifier</td></tr>
+    <tr><td>timestamp</td><td>ISO string</td><td>"2026-03-12T10:30:00Z"</td><td>Detection time</td></tr>
+    <tr><td>created_at</td><td>ISO string</td><td>"2026-03-12T10:30:00Z"</td><td>Record creation time</td></tr>
+  </table>
+  
+  <h3>8.2 What is NEVER Stored</h3>
+  <div class="warning-box">
+    <ul>
+      <li>❌ Face images, video frames, or screenshots</li>
+      <li>❌ Facial landmarks or geometric measurements</li>
+      <li>❌ Face embeddings, descriptors, or biometric data</li>
+      <li>❌ Personal identifiers of any kind</li>
+      <li>❌ IP addresses, geolocation, or device fingerprints</li>
+    </ul>
+  </div>
+  
+  <h3>8.3 Privacy Guarantees</h3>
+  <ol>
+    <li><strong>Client-Side Processing</strong> — All ML inference runs within the browser's JavaScript engine using WebGL acceleration. No video data is transmitted to any external server.</li>
+    <li><strong>No Network Transmission of Images</strong> — The webcam MediaStream is consumed locally by the TensorFlow.js runtime; no frame data enters any network request.</li>
+    <li><strong>Irreversible Anonymization</strong> — Stored data consists only of categorical labels and scalar confidence values. It is computationally impossible to reconstruct facial images from this data.</li>
+    <li><strong>Session Isolation</strong> — Each browser session generates a random UUID via <code>crypto.randomUUID()</code>. Sessions are not linked to user accounts or device identifiers.</li>
+    <li><strong>User-Controlled Data</strong> — Users can export all data as JSON and permanently delete all records through the Settings page.</li>
+  </ol>
+</div>
+
+<!-- ==================== CHAPTER 9 ==================== -->
+<div class="page-break">
+  <h2 id="ch9">9. Database Schema</h2>
+  
+  <h3>9.1 Firebase Firestore Collection: <code>face_analytics</code></h3>
+  
+  <p>All detection results are stored in a single Firestore collection named <code>face_analytics</code>. Each document represents one detected face at a specific point in time.</p>
+  
+  <pre>
+face_analytics/
+├── {auto-generated-document-id}
+│   ├── emotion: string           // "happy", "sad", "angry", "neutral", etc.
+│   ├── emotion_confidence: number // 0.0 – 1.0
+│   ├── age_group: string          // "Child", "Teen", "Adult", "Senior"
+│   ├── age_estimate: number       // Estimated age (e.g., 25)
+│   ├── gender: string             // "male" or "female"
+│   ├── gender_confidence: number  // 0.0 – 1.0
+│   ├── session_id: string         // Random UUID per browser session
+│   ├── timestamp: string          // ISO 8601 formatted timestamp
+│   └── created_at: string         // ISO 8601 creation timestamp</pre>
+  
+  <h3>9.2 Query Patterns</h3>
+  <table>
+    <tr><th>Query</th><th>Purpose</th><th>Firestore Operations</th></tr>
+    <tr><td>All records by time</td><td>Dashboard overview</td><td><code>orderBy('timestamp', 'desc')</code></td></tr>
+    <tr><td>Today's records</td><td>Daily analytics</td><td><code>where('timestamp', '&gt;=', startOfDay)</code></td></tr>
+    <tr><td>Weekly records</td><td>Weekly trends</td><td><code>where('timestamp', '&gt;=', startOfWeek)</code></td></tr>
+    <tr><td>Monthly records</td><td>Monthly insights</td><td><code>where('timestamp', '&gt;=', startOfMonth)</code></td></tr>
+    <tr><td>Real-time updates</td><td>Live dashboard</td><td><code>onSnapshot()</code> listener</td></tr>
+  </table>
+</div>
+
+<!-- ==================== CHAPTER 10 ==================== -->
+<div class="page-break">
+  <h2 id="ch10">10. Application Pages</h2>
+  
+  <h3>10.1 Landing Page (<code>/</code>)</h3>
+  <p>The entry point of the application, designed to showcase system capabilities and communicate the privacy-first approach.</p>
+  <p><strong>Sections:</strong></p>
+  <ul>
+    <li><strong>Hero Section</strong> — Gradient text headline, privacy badge, and two CTA buttons (Start Analysis, View Dashboard)</li>
+    <li><strong>Features Grid</strong> — Six cards highlighting: Real-Time Detection, Emotion Recognition, Demographic Analysis, Analytics Dashboard, Privacy First, Instant Insights</li>
+    <li><strong>Privacy Commitment</strong> — Detailed section with shield icon listing all privacy guarantees</li>
+    <li><strong>"How It Works"</strong> — Three-step visual flow: Allow Camera → AI Analysis → View Insights</li>
+    <li><strong>Call to Action</strong> — Final prompt to begin live analysis</li>
+    <li><strong>Footer</strong> — Branding and privacy reminder</li>
+  </ul>
+  
+  <h3>10.2 Live Analysis Page (<code>/analyze</code>)</h3>
+  <p>The core analysis page providing real-time face detection with webcam integration.</p>
+  <p><strong>Components:</strong></p>
+  <ul>
+    <li>Start/Stop analysis toggle button with loading state</li>
+    <li>Live indicator showing detection status</li>
+    <li>Real-time counters: faces currently detected and total analyzed</li>
+    <li>Video feed with per-face overlays showing bounding boxes, emotion emoji, emotion label with confidence %, age group, and gender</li>
+    <li>Privacy badge confirming all processing is local</li>
+  </ul>
+  
+  <h3>10.3 Analytics Dashboard (<code>/dashboard</code>)</h3>
+  <p>Comprehensive data visualization page with multiple chart types and filtering.</p>
+  <p><strong>Widgets:</strong></p>
+  <ul>
+    <li>Four stat cards: Total Analyzed, Sentiment Score, Positive %, Negative %</li>
+    <li>Emotion Pie Chart with color-coded segments</li>
+    <li>Sentiment Trend line chart (hourly resolution)</li>
+    <li>Age Group bar chart</li>
+    <li>Gender × Emotion grouped bar chart</li>
+    <li>Sentiment Gauge (0–100 visual gauge)</li>
+    <li>Peak Unhappy Times cards</li>
+    <li>Time Range Selector: Today / Week / Month / All</li>
+  </ul>
+  
+  <h3>10.4 Settings Page (<code>/settings</code>)</h3>
+  <p>Configuration and data management interface.</p>
+  <ul>
+    <li><strong>Camera Settings</strong> — Dropdown to select from available video input devices</li>
+    <li><strong>Detection Settings</strong> — Interval slider (100ms–2000ms), database save toggle</li>
+    <li><strong>Data Management</strong> — Export as JSON button, Clear All Data button with confirmation</li>
+    <li><strong>About</strong> — Version info, ML framework, storage backend, privacy notice</li>
+  </ul>
+</div>
+
+<!-- ==================== CHAPTER 11 ==================== -->
+<div class="page-break">
+  <h2 id="ch11">11. Component Structure</h2>
+  
+  <pre>
+src/
+├── App.tsx                          # Root component with React Router
+├── main.tsx                         # Application entry point
+├── index.css                        # Global styles &amp; CSS design tokens
+│
+├── components/
+│   ├── layout/
+│   │   └── Header.tsx               # Navigation header with page links
+│   │
+│   ├── detection/
+│   │   ├── CameraView.tsx           # Webcam feed + detection controls
+│   │   └── FaceOverlay.tsx          # Per-face bounding box + info overlay
+│   │
+│   ├── dashboard/
+│   │   ├── StatCard.tsx             # Metric card (icon + value + label)
+│   │   ├── EmotionPieChart.tsx      # Pie chart of emotion distribution
+│   │   ├── SentimentTrendChart.tsx  # Hourly sentiment line chart
+│   │   ├── AgeGroupChart.tsx        # Age group bar chart
+│   │   ├── GenderEmotionChart.tsx   # Gender × emotion grouped bars
+│   │   ├── SentimentGauge.tsx       # 0–100 sentiment gauge visualization
+│   │   ├── UnhappyTimesCard.tsx     # Peak negative-sentiment hours
+│   │   └── TimeRangeSelector.tsx    # Time range filter buttons
+│   │
+│   └── ui/                          # shadcn/ui reusable component library
+│       ├── button.tsx, card.tsx, select.tsx, slider.tsx
+│       └── ... (40+ accessible components)
+│
+├── hooks/
+│   ├── useFaceDetection.ts          # Webcam + ML detection logic
+│   ├── useAnalytics.ts             # Dashboard data fetching + computation
+│   ├── use-mobile.tsx              # Responsive breakpoint detection
+│   └── use-toast.ts               # Toast notification hook
+│
+├── lib/
+│   ├── faceApi.ts                  # face-api.js wrapper &amp; utility functions
+│   └── utils.ts                    # General utilities (cn class merger)
+│
+├── integrations/
+│   └── firebase/
+│       └── client.ts               # Firebase app init + Firestore exports
+│
+└── pages/
+    ├── Index.tsx                    # Landing page
+    ├── Analyze.tsx                  # Live analysis page
+    ├── Dashboard.tsx               # Analytics dashboard
+    ├── Settings.tsx                # Configuration page
+    └── NotFound.tsx                # 404 error page</pre>
+</div>
+
+<!-- ==================== CHAPTER 12 ==================== -->
+<div class="page-break">
+  <h2 id="ch12">12. Installation &amp; Setup</h2>
+  
+  <h3>12.1 Prerequisites</h3>
+  <ul>
+    <li><strong>Node.js</strong> version 18.x or higher</li>
+    <li><strong>npm</strong> or <strong>bun</strong> package manager</li>
+    <li>A modern web browser with WebRTC and WebGL support (Chrome, Firefox, or Edge)</li>
+    <li>A webcam (built-in or external USB)</li>
+  </ul>
+  
+  <h3>12.2 Installation Steps</h3>
+  
+  <pre>
+# 1. Clone the repository
+git clone &lt;repository-url&gt;
+cd faceinsight
+
+# 2. Install dependencies
+npm install
+
+# 3. Download ML models (if not already present in public/models/)
+node download-models.js
+# On Windows PowerShell:
+# ./download-models.ps1
+
+# 4. Start development server
+npm run dev
+
+# 5. Open in browser
+# Navigate to http://localhost:5173</pre>
+  
+  <h3>12.3 Required Model Files</h3>
+  <p>The following files must exist in the <code>public/models/</code> directory:</p>
+  
+  <pre>
+public/models/
+├── tiny_face_detector_model-shard1
+├── tiny_face_detector_model-weights_manifest.json
+├── face_landmark_68_model-shard1
+├── face_landmark_68_model-weights_manifest.json
+├── face_expression_model-shard1
+├── face_expression_model-weights_manifest.json
+├── age_gender_model-shard1
+├── age_gender_model-weights_manifest.json
+├── face_recognition_model-shard1
+├── face_recognition_model-shard2
+└── face_recognition_model-weights_manifest.json</pre>
+  
+  <h3>12.4 Build for Production</h3>
+  <pre>
+# Create optimized production build
+npm run build
+
+# Preview production build locally
+npm run preview</pre>
+</div>
+
+<!-- ==================== CHAPTER 13 ==================== -->
+<div class="page-break">
+  <h2 id="ch13">13. Configuration</h2>
+  
+  <h3>13.1 Firebase Configuration</h3>
+  <p>Firebase is initialized in <code>src/integrations/firebase/client.ts</code> with the following services:</p>
+  <ul>
+    <li><strong>Firestore</strong> — NoSQL document database for storing anonymized analytics</li>
+    <li><strong>Analytics</strong> — Firebase Analytics for application usage tracking</li>
+  </ul>
+  
+  <h3>13.2 Runtime Configuration (Settings Page)</h3>
+  
+  <table>
+    <tr><th>Setting</th><th>Default Value</th><th>Range</th><th>Description</th></tr>
+    <tr><td>Detection Interval</td><td>500ms</td><td>100ms – 2000ms</td><td>Time between detection cycles</td></tr>
+    <tr><td>Save to Database</td><td>Enabled</td><td>On / Off</td><td>Toggle Firestore persistence</td></tr>
+    <tr><td>Camera Device</td><td>First available</td><td>Device list</td><td>Select video input device</td></tr>
+  </table>
+  
+  <h3>13.3 Performance Tuning</h3>
+  <p>The detection interval directly affects both accuracy and CPU usage:</p>
+  <ul>
+    <li><strong>100ms</strong> — Highest frequency, ~10 detections/second. High CPU usage. Best for high-traffic environments.</li>
+    <li><strong>500ms</strong> (default) — Balanced performance. ~2 detections/second. Recommended for most use cases.</li>
+    <li><strong>2000ms</strong> — Lowest frequency, ~0.5 detections/second. Minimal CPU impact. Suitable for low-traffic environments.</li>
+  </ul>
+</div>
+
+<!-- ==================== CHAPTER 14 ==================== -->
+<div class="page-break">
+  <h2 id="ch14">14. Usage Guide</h2>
+  
+  <h3>14.1 Starting Live Analysis</h3>
+  <ol>
+    <li>Navigate to the <strong>Analyze</strong> page using the navigation header</li>
+    <li>Click the <strong>"Start Analysis"</strong> button</li>
+    <li>The browser will request camera access permission — click <strong>"Allow"</strong></li>
+    <li>Face detection begins automatically at the configured detection interval</li>
+    <li>Each detected face displays a color-coded bounding box with:
+      <ul>
+        <li>Emotion emoji and label with confidence percentage</li>
+        <li>Predicted age group</li>
+        <li>Predicted gender</li>
+      </ul>
+    </li>
+    <li>A green "Live" indicator confirms active detection</li>
+    <li>Click <strong>"Stop Analysis"</strong> to end the session and release the camera</li>
+  </ol>
+  
+  <h3>14.2 Viewing Analytics</h3>
+  <ol>
+    <li>Navigate to the <strong>Dashboard</strong> page</li>
+    <li>Use the time range selector to filter data: Today / This Week / This Month / All Time</li>
+    <li>Charts update in real-time via Firestore subscriptions as new detections are recorded</li>
+    <li>Review the stat cards for key metrics: total analyzed faces, sentiment score, positive and negative percentages</li>
+    <li>Check the <strong>"Peak Unhappy Times"</strong> section to identify hours with the most negative sentiment</li>
+  </ol>
+  
+  <h3>14.3 Exporting Data</h3>
+  <ol>
+    <li>Navigate to <strong>Settings</strong></li>
+    <li>Click <strong>"Export Data (JSON)"</strong></li>
+    <li>A JSON file downloads containing all stored analytics records</li>
+    <li>The exported file can be imported into Excel, Python (pandas), or any data analysis tool</li>
+  </ol>
+  
+  <h3>14.4 Clearing Data</h3>
+  <ol>
+    <li>Navigate to <strong>Settings</strong></li>
+    <li>Click <strong>"Clear All Data"</strong></li>
+    <li>Confirm the action in the browser dialog</li>
+    <li>All stored analytics are permanently and irreversibly deleted from Firestore</li>
+  </ol>
+</div>
+
+<!-- ==================== CHAPTER 15 ==================== -->
+<div class="page-break">
+  <h2 id="ch15">15. API &amp; Hooks Reference</h2>
+  
+  <h3>15.1 <code>useFaceDetection(options)</code></h3>
+  <p>The primary hook for managing webcam access and face detection logic.</p>
+  
+  <h4>Options</h4>
+  <table>
+    <tr><th>Parameter</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    <tr><td>autoStart</td><td>boolean</td><td>false</td><td>Auto-start detection on component mount</td></tr>
+    <tr><td>detectionInterval</td><td>number</td><td>500</td><td>Milliseconds between detection cycles</td></tr>
+    <tr><td>saveToDatabase</td><td>boolean</td><td>true</td><td>Whether to persist results to Firestore</td></tr>
+  </table>
+  
+  <h4>Return Values</h4>
+  <table>
+    <tr><th>Property</th><th>Type</th><th>Description</th></tr>
+    <tr><td>isLoading</td><td>boolean</td><td>True while ML models are being loaded</td></tr>
+    <tr><td>error</td><td>string | null</td><td>Error message if camera or model loading fails</td></tr>
+    <tr><td>isRunning</td><td>boolean</td><td>True when detection is actively running</td></tr>
+    <tr><td>detections</td><td>FaceDetection[]</td><td>Array of faces detected in current frame</td></tr>
+    <tr><td>modelsReady</td><td>boolean</td><td>True when all ML models are loaded</td></tr>
+    <tr><td>totalAnalyzed</td><td>number</td><td>Cumulative count of faces analyzed</td></tr>
+    <tr><td>startDetection</td><td>(deviceId?) =&gt; Promise&lt;boolean&gt;</td><td>Start camera and detection loop</td></tr>
+    <tr><td>stopDetection</td><td>() =&gt; void</td><td>Stop detection and release camera</td></tr>
+    <tr><td>setVideoElement</td><td>(el) =&gt; void</td><td>Attach video element reference</td></tr>
+    <tr><td>videoRef</td><td>RefObject&lt;HTMLVideoElement&gt;</td><td>Reference to the video element</td></tr>
+  </table>
+  
+  <h3>15.2 <code>useAnalytics(timeRange)</code></h3>
+  <p>Hook for fetching and computing dashboard analytics from Firestore.</p>
+  
+  <h4>Parameters</h4>
+  <table>
+    <tr><th>Parameter</th><th>Type</th><th>Values</th></tr>
+    <tr><td>timeRange</td><td>TimeRange</td><td>'today' | 'week' | 'month' | 'all'</td></tr>
+  </table>
+  
+  <h4>Computed Statistics</h4>
+  <table>
+    <tr><th>Stat</th><th>Type</th><th>Description</th></tr>
+    <tr><td>total</td><td>number</td><td>Total records in time range</td></tr>
+    <tr><td>emotionCounts</td><td>Record&lt;string, number&gt;</td><td>Count per emotion</td></tr>
+    <tr><td>ageGroupCounts</td><td>Record&lt;string, number&gt;</td><td>Count per age group</td></tr>
+    <tr><td>genderCounts</td><td>Record&lt;string, number&gt;</td><td>Count per gender</td></tr>
+    <tr><td>sentimentScore</td><td>number</td><td>0–100 composite score</td></tr>
+    <tr><td>positive</td><td>number</td><td>Count of positive emotions</td></tr>
+    <tr><td>negative</td><td>number</td><td>Count of negative emotions</td></tr>
+    <tr><td>neutral</td><td>number</td><td>Count of neutral emotions</td></tr>
+    <tr><td>hourlyData</td><td>Record&lt;string, {...}&gt;</td><td>Hourly sentiment breakdown</td></tr>
+    <tr><td>emotionByGender</td><td>Record&lt;...&gt;</td><td>Emotion distribution per gender</td></tr>
+    <tr><td>peakUnhappyHours</td><td>{hour, count}[]</td><td>Top 3 negative sentiment hours</td></tr>
+  </table>
+  
+  <h3>15.3 FaceDetection Interface</h3>
+  <pre>
+interface FaceDetection {
+  id: string;                  // Unique identifier
+  box: {
+    x: number;                 // Bounding box x position
+    y: number;                 // Bounding box y position
+    width: number;             // Bounding box width
+    height: number;            // Bounding box height
+  };
+  emotion: string;             // Dominant emotion label
+  emotionConfidence: number;   // 0.0 – 1.0
+  age: number;                 // Estimated age in years
+  ageGroup: string;            // "Child" | "Teen" | "Adult" | "Senior"
+  gender: string;              // "male" | "female"
+  genderConfidence: number;    // 0.0 – 1.0
+}</pre>
+  
+  <h3>15.4 Utility Functions</h3>
+  <table>
+    <tr><th>Function</th><th>Input</th><th>Output</th><th>Description</th></tr>
+    <tr><td>loadModels()</td><td>—</td><td>Promise&lt;void&gt;</td><td>Loads all face-api.js ML models</td></tr>
+    <tr><td>isModelsLoaded()</td><td>—</td><td>boolean</td><td>Check if models are ready</td></tr>
+    <tr><td>detectFaces(video)</td><td>HTMLVideoElement</td><td>Promise&lt;FaceDetection[]&gt;</td><td>Run detection on video frame</td></tr>
+    <tr><td>getAgeGroup(age)</td><td>number</td><td>string</td><td>Map age to group label</td></tr>
+    <tr><td>getEmotionEmoji(emotion)</td><td>string</td><td>string</td><td>Get emoji for emotion</td></tr>
+    <tr><td>getEmotionColor(emotion)</td><td>string</td><td>string</td><td>Get HSL color for emotion</td></tr>
+  </table>
+</div>
+
+<!-- ==================== CHAPTER 16 ==================== -->
+<div class="page-break">
+  <h2 id="ch16">16. Security &amp; Privacy</h2>
+  
+  <h3>16.1 Threat Model &amp; Mitigations</h3>
+  
+  <table>
+    <tr><th>Threat</th><th>Risk Level</th><th>Mitigation</th></tr>
+    <tr><td>Face image exfiltration</td><td>Critical</td><td>All ML processing is client-side; no image data enters any network request</td></tr>
+    <tr><td>Identity tracking via biometrics</td><td>High</td><td>No facial embeddings, descriptors, or landmark geometry is stored</td></tr>
+    <tr><td>Data re-identification</td><td>Medium</td><td>Only categorical labels stored; mathematically impossible to reconstruct faces</td></tr>
+    <tr><td>Unauthorized data access</td><td>Medium</td><td>Firebase security rules; user-controlled data export and deletion</td></tr>
+    <tr><td>Session correlation</td><td>Low</td><td>Random UUID per session; no cookies, login, or device fingerprinting</td></tr>
+    <tr><td>Man-in-the-middle attacks</td><td>Low</td><td>HTTPS enforced for all Firestore communication</td></tr>
+  </table>
+  
+  <h3>16.2 Privacy Compliance</h3>
+  <ul>
+    <li><strong>GDPR Alignment</strong> — No personal data is collected; only anonymous aggregate statistics are stored</li>
+    <li><strong>Data Minimization</strong> — Only essential fields (emotion label, age group, gender) are persisted</li>
+    <li><strong>Right to Deletion</strong> — One-click data clearing is available in the Settings page</li>
+    <li><strong>Transparency</strong> — Privacy notices are prominently displayed on the landing page and analysis page</li>
+    <li><strong>Purpose Limitation</strong> — Data is used exclusively for sentiment and demographic analytics</li>
+  </ul>
+  
+  <h3>16.3 Security Best Practices Implemented</h3>
+  <ul>
+    <li>No server-side processing of sensitive media</li>
+    <li>WebRTC camera streams are consumed locally only</li>
+    <li>Firebase SDK handles authentication and transport encryption</li>
+    <li>No third-party tracking scripts or advertising SDKs</li>
+    <li>Content Security Policy compatible architecture</li>
+  </ul>
+</div>
+
+<!-- ==================== CHAPTER 17 ==================== -->
+<div class="page-break">
+  <h2 id="ch17">17. Testing</h2>
+  
+  <h3>17.1 Test Framework</h3>
+  <table>
+    <tr><th>Tool</th><th>Purpose</th></tr>
+    <tr><td>Vitest 3.2</td><td>Test runner and assertion library</td></tr>
+    <tr><td>jsdom</td><td>Browser-like DOM environment for tests</td></tr>
+    <tr><td>@testing-library/react</td><td>React component testing utilities</td></tr>
+    <tr><td>@testing-library/jest-dom</td><td>Custom DOM element matchers</td></tr>
+  </table>
+  
+  <h3>17.2 Running Tests</h3>
+  <pre>
+# Run all tests once
+npm test
+
+# Run tests in watch mode (re-runs on file changes)
+npm run test:watch</pre>
+  
+  <h3>17.3 Test Categories</h3>
+  <ul>
+    <li><strong>Unit Tests</strong> — Test individual utility functions (age group mapping, emotion color mapping)</li>
+    <li><strong>Hook Tests</strong> — Test custom hooks with mocked dependencies</li>
+    <li><strong>Component Tests</strong> — Test component rendering and interaction</li>
+    <li><strong>Integration Tests</strong> — Test data flow from detection to dashboard display</li>
+  </ul>
+</div>
+
+<!-- ==================== CHAPTER 18 ==================== -->
+<div class="page-break">
+  <h2 id="ch18">18. Limitations &amp; Future Work</h2>
+  
+  <h3>18.1 Current Limitations</h3>
+  <ol>
+    <li><strong>Lighting Sensitivity</strong> — Face detection accuracy decreases significantly in poor or uneven lighting conditions</li>
+    <li><strong>Angle Dependency</strong> — Best results are achieved with near-frontal face orientation; extreme angles reduce detection rate</li>
+    <li><strong>Age Estimation Variance</strong> — ML age predictions can have ±5–10 year error margins, particularly for younger and older faces</li>
+    <li><strong>Browser Compatibility</strong> — Requires a modern browser with WebRTC (camera access) and WebGL (GPU acceleration) support</li>
+    <li><strong>Single-Tab Operation</strong> — Running analysis in multiple browser tabs may cause camera resource conflicts</li>
+    <li><strong>No User Authentication</strong> — The system operates with open access by design (suitable for educational/demo use)</li>
+    <li><strong>Binary Gender Classification</strong> — The pre-trained model only predicts male/female, which does not represent the full gender spectrum</li>
+    <li><strong>Cultural Bias</strong> — Pre-trained models may exhibit varying accuracy across different ethnic groups due to training data distribution</li>
+  </ol>
+  
+  <h3>18.2 Future Enhancements</h3>
+  <ol>
+    <li><strong>Email/SMS Alerts</strong> — Notify store managers when negative sentiment exceeds configurable thresholds</li>
+    <li><strong>PDF Report Generation</strong> — Automated daily/weekly summary reports with embedded charts</li>
+    <li><strong>Period Comparison</strong> — Side-by-side comparison of sentiment metrics across different time periods</li>
+    <li><strong>Heatmap Visualization</strong> — Time-of-day × day-of-week sentiment heatmap for pattern recognition</li>
+    <li><strong>Multi-Camera Support</strong> — Monitor and analyze feeds from multiple cameras simultaneously</li>
+    <li><strong>Offline Mode</strong> — Queue analytics locally using IndexedDB when network connectivity is unavailable</li>
+    <li><strong>Custom Emotion Grouping</strong> — Allow users to define their own positive/negative/neutral categories</li>
+    <li><strong>A/B Testing Integration</strong> — Correlate customer sentiment data with store layout or product changes</li>
+    <li><strong>User Authentication</strong> — Add login system for multi-user deployments with role-based access</li>
+    <li><strong>Progressive Web App (PWA)</strong> — Add service worker for offline capability and installable app experience</li>
+  </ol>
+</div>
+
+<!-- ==================== CHAPTER 19 ==================== -->
+<div class="page-break">
+  <h2 id="ch19">19. References</h2>
+  
+  <ol>
+    <li>Justadudewhohacks. "face-api.js — JavaScript API for Face Detection and Face Recognition in the Browser." GitHub Repository. Available at: <em>https://github.com/justadudewhohacks/face-api.js</em></li>
+    <li>Google. "TensorFlow.js: Machine Learning for the Web and Beyond." TensorFlow Documentation. Available at: <em>https://www.tensorflow.org/js</em></li>
+    <li>Meta Platforms. "React — A JavaScript Library for Building User Interfaces." React Documentation. Available at: <em>https://react.dev</em></li>
+    <li>Recharts Contributors. "Recharts — A composable charting library built on React components." Available at: <em>https://recharts.org</em></li>
+    <li>Tailwind Labs. "Tailwind CSS — A utility-first CSS framework for rapidly building custom designs." Available at: <em>https://tailwindcss.com</em></li>
+    <li>shadcn. "shadcn/ui — Beautifully designed components built with Radix UI and Tailwind CSS." Available at: <em>https://ui.shadcn.com</em></li>
+    <li>Google. "Firebase — App development platform." Firebase Documentation. Available at: <em>https://firebase.google.com</em></li>
+    <li>Ekman, P. (1992). "An Argument for Basic Emotions." <em>Cognition &amp; Emotion</em>, 6(3-4), 169-200.</li>
+    <li>Viola, P. &amp; Jones, M. (2001). "Rapid Object Detection using a Boosted Cascade of Simple Features." <em>Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR)</em>.</li>
+    <li>Howard, A.G., et al. (2017). "MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications." <em>arXiv preprint arXiv:1704.04861</em>.</li>
+    <li>He, K., et al. (2016). "Deep Residual Learning for Image Recognition." <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em>, 770-778.</li>
+    <li>Goodfellow, I.J., et al. (2013). "Challenges in Representation Learning: A report on three machine learning contests." <em>International Conference on Neural Information Processing</em>.</li>
+  </ol>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<div class="page-break" style="text-align:center; padding-top: 200pt;">
+  <hr style="border: 2px solid #0f3460; width: 60%;"/>
+  <br/>
+  <p style="font-size: 16pt; font-weight: bold; color: #0f3460;">FaceInsight</p>
+  <p style="font-size: 12pt; color: #666;">Understanding customers, respecting privacy.</p>
+  <br/>
+  <p style="font-size: 10pt; color: #999;">© 2026 Abinash Rauniyar. All rights reserved.</p>
+  <p style="font-size: 10pt; color: #999;">Final Year Project Documentation</p>
+</div>
+
+</body>
+</html>
